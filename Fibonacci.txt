@@ -1,0 +1,32 @@
+<?php
+if(isset($_POST['print']))
+{
+
+$n=$_POST['number'];
+
+$n1=0;
+$n2=1;
+
+echo "Fibonacci Series:<br>";
+
+echo $n1." ".$n2." ";
+
+for($i=2;$i<$n;$i++)
+{
+$n3=$n1+$n2;
+echo $n3." ";
+
+$n1=$n2;
+$n2=$n3;
+}
+}
+?>
+
+<form method="post">
+
+Enter number:
+<input type="number" name="number" required>
+
+<button type="submit" name="print">Print</button>
+
+</form>
