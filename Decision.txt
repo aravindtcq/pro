@@ -1,0 +1,34 @@
+<?php
+$tree=[
+"Budget"=>[
+"high"=>[
+"NeedCamera"=>[
+"yes"=>"buy DSLR",
+"no"=>"buy Laptop"
+]
+],
+"low"=>[
+"NeedCamera"=>[
+"yes"=>"buy mobile",
+"no"=>"do not buy"
+]
+]
+]
+];
+
+$input=[
+"Budget"=>"low",
+"NeedCamera"=>"yes"
+];
+
+function predict($tree,$input){
+$attr=array_key_first($tree);
+$branch=$tree[$attr][$input[$attr]];
+if(!is_array($branch)){
+return $branch;
+}
+return predict($branch,$input);
+}
+
+echo "Decision: ".predict($tree,$input);
+?>
