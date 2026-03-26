@@ -1,0 +1,49 @@
+<?php
+if(isset($_POST['submit']))
+{
+echo "<h3>Student Registered Successfully</h3>";
+
+echo "Name: ".$_POST['name']."<br>";
+echo "Register No: ".$_POST['regno']."<br>";
+echo "Department: ".$_POST['dept']."<br>";
+echo "Course: ".$_POST['course']."<br>";
+echo "Year: ".$_POST['year']."<br>";
+echo "Email: ".$_POST['email']."<br>";
+echo "Mobile: ".$_POST['mobile']."<br>";
+}
+?>
+
+<form method="post">
+
+<h3>Student Registration</h3>
+
+<input type="text" name="name" placeholder="Student Name" required><br><br>
+
+<input type="text" name="regno" placeholder="Register Number" required><br><br>
+
+<select name="dept">
+<option>Computer Science</option>
+<option>IT</option>
+<option>Computer Application</option>
+</select><br><br>
+
+<select name="course">
+<option>BSc</option>
+<option>MSc</option>
+<option>BCA</option>
+<option>MCA</option>
+</select><br><br>
+
+<select name="year">
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+</select><br><br>
+
+<input type="email" name="email" placeholder="Email" required><br><br>
+
+<input type="text" name="mobile" placeholder="Mobile Number" required><br><br>
+
+<input type="submit" name="submit" value="Register">
+
+</form>
