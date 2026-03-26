@@ -1,0 +1,31 @@
+<?php
+if(isset($_POST['swap']))
+{
+$a=$_POST['num1'];
+$b=$_POST['num2'];
+
+echo "Before Swapping<br>";
+echo "a = $a <br>";
+echo "b = $b <br>";
+
+$temp=$a;
+$a=$b;
+$b=$temp;
+
+echo "<br>After Swapping<br>";
+echo "a = $a <br>";
+echo "b = $b";
+}
+?>
+
+<form method="post">
+
+Enter First Number:
+<input type="number" name="num1" required><br><br>
+
+Enter Second Number:
+<input type="number" name="num2" required><br><br>
+
+<button type="submit" name="swap">Swap</button>
+
+</form>
