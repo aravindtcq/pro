@@ -1,0 +1,27 @@
+<?php
+$weather = "Sunny";
+
+function tree1($w){
+return ($w == "Sunny") ? "No" : "Yes";
+}
+
+function tree2($w){
+return ($w == "Rainy") ? "Yes" : "No";
+}
+
+function tree3($w){
+return ($w == "Overcast") ? "Yes" : "No";
+}
+
+$votes=[];
+$votes[]=tree1($weather);
+$votes[]=tree2($weather);
+$votes[]=tree3($weather);
+
+$count=array_count_values($votes);
+
+$result=($count["Yes"]??0) > ($count["No"]??0) ? "Yes" : "No";
+
+echo "Weather: $weather<br>";
+echo "Decision: $result";
+?>
