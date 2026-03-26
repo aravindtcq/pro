@@ -1,0 +1,35 @@
+<?php
+$message="";
+
+if(isset($_POST['login']))
+{
+$username=$_POST['username'];
+$password=$_POST['password'];
+
+if($username=="admin" && $password=="123")
+{
+$message="Login Successful";
+}
+else
+{
+$message="Login Failed";
+}
+}
+?>
+
+<form method="post">
+
+<h3>Login</h3>
+
+<input type="text" name="username" placeholder="Username" required><br><br>
+
+<input type="password" name="password" placeholder="Password" required><br><br>
+
+<button type="submit" name="login">Login</button>
+
+</form>
+
+<?php
+if($message)
+echo "<p>$message</p>";
+?>
