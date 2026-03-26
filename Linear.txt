@@ -1,0 +1,30 @@
+<?php
+$a = array(2,4,6,8);
+$b = array(4,8,12,16);
+
+$n = count($a);
+
+$sumA=0;
+$sumB=0;
+$sumAB=0;
+$sumA2=0;
+
+for($i=0;$i<$n;$i++)
+{
+$sumA+=$a[$i];
+$sumB+=$b[$i];
+$sumAB+=$a[$i]*$b[$i];
+$sumA2+=$a[$i]*$a[$i];
+}
+
+$m = ($n*$sumAB-$sumA*$sumB)/($n*$sumA2-$sumA*$sumA);
+$c = ($sumB-$m*$sumA)/$n;
+
+echo "Slope = $m <br>";
+echo "Intercept = $c <br>";
+
+$x=10;
+$y=$m*$x+$c;
+
+echo "Prediction for x=$x is y=$y";
+?>
